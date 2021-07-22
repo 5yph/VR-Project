@@ -83,7 +83,7 @@ public class ActionControllerInputAnimate : MonoBehaviour
         trigAction = actionController.activateAction.action.ReadValue<float>();
         Debug.Log("Trigger Pressed: " + trigAction);
         handAnimator.SetFloat("Trigger", trigAction);
-        GameObject spawnProjectile = Instantiate(projectile, actionController.model.transform.position, projectile.transform.rotation);
+        GameObject spawnProjectile = Instantiate(projectile, actionController.model.transform.position, actionController.model.transform.rotation);
         spawnProjectile.GetComponent<Rigidbody>().velocity = speed * actionController.model.transform.forward;
 
         if (audioSource && audioClip)
